@@ -1,18 +1,15 @@
 <component name="libraryTable">
   <library name="springframework.spring.webmvc" type="repository">
-    <properties maven-id="org.springframework:spring-webmvc:3.0.6.RELEASE" />
+    <properties maven-id="org.springframework:spring-webmvc:5.3.15" />
     <CLASSES>
-      <root url="jar://$PROJECT_DIR$/lib/spring-webmvc-3.0.6.RELEASE.jar!/" />
-      <root url="jar://$PROJECT_DIR$/lib/spring-asm-3.0.6.RELEASE.jar!/" />
-      <root url="jar://$PROJECT_DIR$/lib/spring-beans-3.0.6.RELEASE.jar!/" />
-      <root url="jar://$PROJECT_DIR$/lib/spring-context-3.0.6.RELEASE.jar!/" />
-      <root url="jar://$PROJECT_DIR$/lib/spring-aop-3.0.6.RELEASE.jar!/" />
-      <root url="jar://$PROJECT_DIR$/lib/spring-context-support-3.0.6.RELEASE.jar!/" />
-      <root url="jar://$PROJECT_DIR$/lib/spring-core-3.0.6.RELEASE.jar!/" />
-      <root url="jar://$PROJECT_DIR$/lib/commons-logging-1.1.1.jar!/" />
-      <root url="jar://$PROJECT_DIR$/lib/spring-expression-3.0.6.RELEASE.jar!/" />
-      <root url="jar://$PROJECT_DIR$/lib/spring-web-3.0.6.RELEASE.jar!/" />
-      <root url="jar://$PROJECT_DIR$/lib/aopalliance-1.0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/spring-webmvc-5.3.15.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/spring-aop-5.3.15.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/spring-beans-5.3.15.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/spring-context-5.3.15.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/spring-core-5.3.15.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/spring-jcl-5.3.15.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/spring-expression-5.3.15.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/spring-web-5.3.15.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />

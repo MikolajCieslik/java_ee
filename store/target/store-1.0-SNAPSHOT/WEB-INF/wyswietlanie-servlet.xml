@@ -10,6 +10,18 @@
  http://www.springframework.org/schema/mvc/spring-mvc.xsd
 ">
 
+    <bean id="dataSource"
+          class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+        <property name="driverClassName" value="com.mysql.jdbc.Driver"/>
+        <property name="url" value="jdbc:mysql://localhost:3306/jaavee"/>
+        <property name="username" value="root"/>
+        <property name="password" value=""/>
+    </bean>
+
+    <bean id="studentDAOImpl" class="dao.UserDAOImpl">
+        <property name="dataSource"  ref="dataSource" />
+    </bean>
+
     <mvc:annotation-driven />
 
 
