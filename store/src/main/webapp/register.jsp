@@ -17,6 +17,20 @@
             <input type="submit" value="Zarejestruj">
         </form>
     </div>
+    <div>
+        <%
+            String msg= request.getParameter("msg");
+            if("valid".equals(msg)){
+                %>
+        <h3>Udało się zarejestrować. Proszę się zalogować</h3>
+        <a href="index.jsp"><button>Strona główna</button></a>
+        <%}
+            if("invalid".equals(msg)){%>
+                <h3>Nie udało się zarejestrować.</h3>
+        <a href="index.jsp"><button>Strona główna</button></a>
+        <% }
+        %>
+    </div>
 
 </body>
 </html>

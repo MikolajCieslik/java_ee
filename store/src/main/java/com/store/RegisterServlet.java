@@ -13,7 +13,7 @@ import java.sql.Statement;
 
 
 @WebServlet(name= "RegisterServlet", urlPatterns = {"/RegServlet"})
-public class RegisterServlet extends HttpServlet{
+public class RegisterServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -21,6 +21,7 @@ public class RegisterServlet extends HttpServlet{
         response.setCharacterEncoding("UTF-8");
         String login = request.getParameter("login");
         String haslo = request.getParameter("haslo");
+        //TODO: dorobić hashowanie haseł
         //String haslohash = hashCode()
         Integer typ_konta = 1;
         String imie = request.getParameter("imie");
@@ -33,16 +34,16 @@ public class RegisterServlet extends HttpServlet{
         try {
             Statement st = con.createStatement();
             String sql = "Insert into users(login, haslo, typ_konta, imie, nazwisko, kod_pocztowy, miejscowosc, adres, numer) values('"
-                    +login+"','"+haslo+"','"+typ_konta+"','"+imie+"','"+nazwisko+"','"+kod_pocztowy+
-                    "','"+miejscowosc+"','"+adres+"','"+numer+"');";
+                    + login + "','" + haslo + "','" + typ_konta + "','" + imie + "','" + nazwisko + "','" + kod_pocztowy +
+                    "','" + miejscowosc + "','" + adres + "','" + numer + "');";
             Integer insertedRows = st.executeUpdate(sql);
             st.close();
             con.close();
-            response.getWriter().println("Utworzono konto. Proszę się zalogować");
-            request.getRequestDispatcher("/registered.jsp").forward(request, response);
+            response.sendRedirect("register.jsp?msg=valid");
 
         } catch (SQLException e) {
             e.printStackTrace();
+            response.sendRedirect("register.jsp?msg=invalid");
 
 
         }
