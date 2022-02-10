@@ -33,6 +33,7 @@ public class LogoutServlet extends HttpServlet{
         session.removeAttribute("login");
         session.removeAttribute("imie_nazwisko");
         session.removeAttribute("typ_konta");
+        session.invalidate();
         response.sendRedirect("index.jsp");
     }
 }

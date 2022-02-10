@@ -10,21 +10,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="605f93c9-849a-4999-9e1c-965fa7659cc1" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/store/LogoutServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/store/addProductServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/store/editProductServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/addproduct.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/editproduct.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/product.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Store.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Store.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/store/LoginServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/store/LoginServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/store/LogoutServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/store/LogoutServlet.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/store/RegisterServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/store/RegisterServlet.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/index.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/login.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/login.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/register.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/register.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/registered.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/store/LoginServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/store/LoginServlet.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/store/RegisterServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/store/RegisterServlet.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/store-1.0-SNAPSHOT/WEB-INF/classes/com/store/RegisterServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/store-1.0-SNAPSHOT/WEB-INF/classes/com/store/RegisterServlet.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/store-1.0-SNAPSHOT/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/store-1.0-SNAPSHOT/index.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/store-1.0-SNAPSHOT/register.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/store-1.0-SNAPSHOT/register.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/store-1.0-SNAPSHOT/registered.jsp" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -295,7 +292,8 @@
       <workItem from="1644407968325" duration="54000" />
       <workItem from="1644409632706" duration="10187000" />
       <workItem from="1644422086250" duration="1946000" />
-      <workItem from="1644424852870" duration="8377000" />
+      <workItem from="1644424852870" duration="8717000" />
+      <workItem from="1644492119206" duration="15801000" />
     </task>
     <servers />
   </component>

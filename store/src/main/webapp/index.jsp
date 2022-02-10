@@ -14,7 +14,14 @@
     <br/>
     <a href="hello-servlet">Hello Servlet</a><br>
     <%
-        Integer typ = (Integer) session.getAttribute("typ_konta");
+        Integer typ;
+        if(session.isNew()){
+            typ = 0;
+            session.setAttribute("typ_konta",0);
+        }
+        else{
+            typ = (Integer) session.getAttribute("typ_konta");
+        }
         if(typ == null)
         {
             %>
@@ -32,12 +39,17 @@
             if(typ==2)
             {
                 %>
-            <a href="${pageContext.request.contextPath}/LogoServlet">Wyloguj</a>
+            <a href="${pageContext.request.contextPath}/LogoServlet">Wyloguj</a><br>
+            <a href="addproduct.jsp">Dodaj produkt</a>
             <h2>Konto admina</h2>
                 <%
             }
-            else{
-
+            if(typ==0)
+            {
+                %>
+            <a href="register.jsp">Rejestracja</a><br>
+            <a href="login.jsp">Zaloguj</a>
+            <%
             }
         }
 
@@ -51,27 +63,33 @@
             while (rs.next()){
     %>
                 <tr>
-                    <td><%=
+                    <td><a href="product.jsp?prod=<%=rs.getString(1)%>"><%=
                         rs.getString(2)
-                        %></td>
+                    %></a></td>
                     <td><%=
                         rs.getString(3)
                     %></td>
                     <td><%=
                         rs.getString(4)
                     %></td>
-                    <td><%=
-                        rs.getString(5)
-                    %></td>
-                    <td><img src=<%=
+                    <td><a href="product.jsp?prod=<%=rs.getString(1)%>">
+                        <img src=<%=
                         rs.getString(6)
-                    %>></td>
+                    %>></a></td>
                     <td><%=
                         rs.getInt(7)
                     %></td>
                     <td><%=
                         rs.getDouble(8)
                     %></td>
+                    <%
+                        if(typ==2)
+                        {
+                            %>
+                            <td><a href="editproduct.jsp?prod=<%=rs.getString(1)%>">Edytuj</a></td>
+                    <%
+                        }
+                    %>
                 </tr>
     <%
             }
@@ -84,6 +102,5 @@
 
     %>
     </table>
-    <%--<img src="zdjecia/deathstranding.png">--%>
 </body>
 </html>
