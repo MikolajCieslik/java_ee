@@ -10,17 +10,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="605f93c9-849a-4999-9e1c-965fa7659cc1" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/store/addProductServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/store/editProductServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/addproduct.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/editproduct.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/product.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/store/editUserServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/edituser.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/store/LogoutServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/store/LogoutServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/store/RegisterServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/store/RegisterServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/editproduct.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/editproduct.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/index.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/store/RegisterServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/store/RegisterServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/store-1.0-SNAPSHOT/WEB-INF/classes/com/store/RegisterServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/store-1.0-SNAPSHOT/WEB-INF/classes/com/store/RegisterServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/store/LogoutServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/store/LogoutServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/store-1.0-SNAPSHOT/WEB-INF/classes/com/store/LogoutServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/store-1.0-SNAPSHOT/WEB-INF/classes/com/store/LogoutServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/store-1.0-SNAPSHOT/editproduct.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/store-1.0-SNAPSHOT/editproduct.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/store-1.0-SNAPSHOT/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/store-1.0-SNAPSHOT/index.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -56,6 +54,9 @@
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectId" id="24pdjUQ2GywcYwPnqIMCdTVlRE0" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -293,7 +294,7 @@
       <workItem from="1644409632706" duration="10187000" />
       <workItem from="1644422086250" duration="1946000" />
       <workItem from="1644424852870" duration="8717000" />
-      <workItem from="1644492119206" duration="15801000" />
+      <workItem from="1644492119206" duration="21329000" />
     </task>
     <servers />
   </component>

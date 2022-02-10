@@ -34,6 +34,7 @@
             Cena: <input type="number" step="0.01" value=<%=rs.getString(8)%> name="cena" placeholder="Cena" required><br><br>
             <input type="submit" value="Edytuj">
         </form>
+        <a href="index.jsp"><button value="Anuluj">Anuluj</button></a>
     </div>
     <%
         }

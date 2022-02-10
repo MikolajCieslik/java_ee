@@ -33,6 +33,7 @@
             if(typ==1)
             {
                 %>
+                <a href="edituser.jsp">Edytuj konto</a><br>
                 <a href="${pageContext.request.contextPath}/LogoServlet">Wyloguj</a>
                 <%
             }
