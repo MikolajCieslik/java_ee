@@ -7,12 +7,14 @@
 <html>
 <head>
     <title>Strona główna sklepu</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
 <body>
-    <h1><%= "Hello World!" %>
-    </h1>
-    <br/>
-    <a href="hello-servlet">Hello Servlet</a><br>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="index.jsp">Strona główna</a>
+
+
+
     <%
         Integer typ;
         if(session.isNew()){
@@ -25,73 +27,71 @@
         if(typ == null)
         {
             %>
-            <a href="register.jsp">Rejestracja</a><br>
-            <a href="login.jsp">Zaloguj</a>
+            <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+                <a class="navbar-brand" href="register.jsp">Rejestracja</a>
+                <a class="navbar-brand" href="login.jsp">Logowanie</a>
+            </li>
+            </ul>
+
+
         <%
         }
         else{
             if(typ==1)
             {
                 %>
-                <a href="edituser.jsp">Edytuj konto</a><br>
-                <a href="${pageContext.request.contextPath}/LogoServlet">Wyloguj</a>
+                <a class="navbar-brand" href="edituser.jsp">Edytuj konto</a>
+                <a class="navbar-brand ml-auto" href="${pageContext.request.contextPath}/LogoServlet">Wyloguj</a>
                 <%
             }
             if(typ==2)
             {
                 %>
-            <a href="${pageContext.request.contextPath}/LogoServlet">Wyloguj</a><br>
-            <a href="addproduct.jsp">Dodaj produkt</a>
-            <h2>Konto admina</h2>
+            <a class="navbar-brand" href="addproduct.jsp">Dodaj produkt</a>
+            <a class="navbar-brand ml-auto" href="${pageContext.request.contextPath}/LogoServlet">Wyloguj</a>
                 <%
             }
             if(typ==0)
             {
                 %>
-            <a href="register.jsp">Rejestracja</a><br>
-            <a href="login.jsp">Zaloguj</a>
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+                <a class="navbar-brand" href="register.jsp">Rejestracja</a>
+                <a class="navbar-brand" href="login.jsp">Logowanie</a>
+            </li>
+        </ul>
             <%
             }
         }
 
     %>
-    <table>
-    <%
-        try{
-            Connection con = ConnectionProvider.getCon();
-            Statement st = con.createStatement();
-            ResultSet rs = st.executeQuery("select * from products");
-            while (rs.next()){
-    %>
-                <tr>
-                    <td><a href="product.jsp?prod=<%=rs.getString(1)%>"><%=
-                        rs.getString(2)
-                    %></a></td>
-                    <td><%=
-                        rs.getString(3)
-                    %></td>
-                    <td><%=
-                        rs.getString(4)
-                    %></td>
-                    <td><a href="product.jsp?prod=<%=rs.getString(1)%>">
-                        <img src=<%=
-                        rs.getString(6)
-                    %>></a></td>
-                    <td><%=
-                        rs.getInt(7)
-                    %></td>
-                    <td><%=
-                        rs.getDouble(8)
-                    %></td>
-                    <%
-                        if(typ==2)
-                        {
-                            %>
-                            <td><a href="editproduct.jsp?prod=<%=rs.getString(1)%>">Edytuj</a></td>
-                    <%
-                        }
-                    %>
-                </tr>
+    </nav>
+    <div class="container">
+        <div class="card-deck">
+        <%
+            try{
+                Connection con = ConnectionProvider.getCon();
+                Statement st = con.createStatement();
+                ResultSet rs = st.executeQuery("select * from products");
+                while (rs.next()){
+        %>
+                <div class="card mb-3" style="min-width: 18rem; max-width: 18rem;">
+                    <img class="card-img-top" src="<%=rs.getString(6)%>" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title"><a href="product.jsp?prod=<%=rs.getString(1)%>"><%=rs.getString(2)%></a></h5>
+                        <p class="card-text">Cena:<%=rs.getDouble(8)%></p>
+                        <%
+                            if(typ==2)
+                            {
+                        %>
+                        <td><a href="editproduct.jsp?prod=<%=rs.getString(1)%>">Edytuj</a></td>
+                        <%
+                            }
+                        %>
+                    </div>
+                </div>
+
     <%
             }
             rs.close();
@@ -102,6 +102,7 @@
         }
 
     %>
-    </table>
+        </div>
+    </div>
 </body>
 </html>

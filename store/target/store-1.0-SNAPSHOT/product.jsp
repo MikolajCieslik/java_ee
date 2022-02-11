@@ -2,10 +2,12 @@
 <%@ page import="com.store.ConnectionProvider" %>
 <%@ page import="java.sql.Statement" %>
 <%@ page import="java.sql.ResultSet" %>
+<%@ page import="com.mysql.cj.Session" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
     <%
+        Integer typ = (Integer) session.getAttribute("typ_konta");
         String prod= request.getParameter("prod");
         try{
             Connection con = ConnectionProvider.getCon();
@@ -30,6 +32,12 @@
     %>
     <h1>Wybrany produkt nie istnieje</h1>
     <%
+            }
+            if(typ==2)
+            {
+                %>
+            <a href="editproduct.jsp?prod=<%=rs.getString(1)%>"><button>Edytuj</button></a>
+            <%
             }
             rs.close();
             st.close();
