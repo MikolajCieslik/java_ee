@@ -29,6 +29,7 @@ public class AddToCartServlet extends HttpServlet{
             try {
                 Statement st = con.createStatement();
                 ResultSet rs = st.executeQuery("select cena from products where id='"+prod+"'");
+                //TODO: sprawdzić czy jest już produkt w koszyku
                 if(rs.next()==true) {
 
                     cena= rs.getDouble(1);

@@ -91,7 +91,25 @@
                     <input type="submit" value="Opróżnij koszyk">
                 </form>
                 <%
+                    ResultSet rs2 = st.executeQuery("select imie, nazwisko, kod_pocztowy, miejscowosc, adres, numer from users where id="+id+";");
+                    if(rs2.next()==true){
+                %>
+                <form action="OrderServlet" method="post">
+                    Imię: <input type="text" name="imie" value="<%=rs2.getString(1)%>" required><br><br>
+                    Nazwisko: <input type="text" name="nazwisko" value="<%=rs2.getString(2)%>" required><br><br>
+                    Kod pocztowy: <input type="text" name="kod_pocztowy" value="<%=rs2.getString(3)%>" required><br><br>
+                    Miejscowość: <input type="text" name="miejscowosc" value="<%=rs2.getString(4)%>" required><br><br>
+                    Adres: <input type="text" name="adres" value="<%=rs2.getString(5)%>" required><br><br>
+                    Numer: <input type="text" name="numer" value="<%=rs2.getString(6)%>" required><br><br>
+                    <select id="delivery" name="delivery">
+                        <option value="Poczta">Poczta +12 zł</option>
+                        <option value="Kurier">Kurier +20 zł</option>
+                    </select>
+                    <input type="submit" value="Zakup">
+                </form>
+                <%
             }
+                }
             else
             {
                 %>

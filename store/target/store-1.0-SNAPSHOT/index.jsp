@@ -37,6 +37,7 @@
             {
                 %>
             <a class="navbar-brand" href="edituser.jsp">Edytuj konto</a>
+            <a class="navbar-brand" href="myorders.jsp">Moje zamówienia</a>
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
                     <a class="navbar-brand" href="cart.jsp">Koszyk</a>

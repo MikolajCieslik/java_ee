@@ -2,25 +2,18 @@
 <%@ page import="com.store.ConnectionProvider" %>
 <%@ page import="java.sql.Statement" %>
 <%@ page import="java.sql.ResultSet" %>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<!DOCTYPE html>
 <html>
 <head>
-    <%
-        Integer typ = (Integer) session.getAttribute("typ_konta");
-        String prod= request.getParameter("prod");
-        try{
-            Connection con = ConnectionProvider.getCon();
-            Statement st = con.createStatement();
-            ResultSet rs = st.executeQuery("select * from products where id="+prod+";");
-            if(rs.next()==true){
-    %>
-    <title><%=rs.getString(2)%></title>
+    <title>Moje zamówienia</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
 <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <a class="navbar-brand" href="index.jsp">Strona główna</a>
         <%
+            Integer typ;
             if(session.isNew()){
                 typ = 0;
                 session.setAttribute("typ_konta",0);
@@ -44,7 +37,6 @@
             {
         %>
         <a class="navbar-brand" href="edituser.jsp">Edytuj konto</a>
-        <a class="navbar-brand" href="myorders.jsp">Moje zamówienia</a>
         <ul class="navbar-nav ml-auto">
             <li class="nav-item">
                 <a class="navbar-brand" href="cart.jsp">Koszyk</a>
@@ -74,55 +66,49 @@
             }
         %>
     </nav>
-    <h2><%=rs.getString(2)%></h2><br>
-    <img src=<%=rs.getString(6)%>><br>
-    Platforma: <%=rs.getString(3)%><br>
-    <%=rs.getString(4)%><br>
-    <%=rs.getString(5)%><br>
-    Ilość: <%=rs.getInt(7)%><br>
-    Cena: <%=rs.getDouble(8)%><br>
-    <%
-            }
-            else
-            {
-    %>
-    <h1>Wybrany produkt nie istnieje</h1>
-    <%
-            }
-            if(typ==1)
-            {
-                ResultSet rs2 = st.executeQuery("select ilosc from products where id="+prod+";");
-                %>
-                <form action="addToCartServlet?prod=<%=prod%>" method="post">
-                    <select id="ilosc" name="ilosc">
-                    <%
-                    if(rs2.next()==true)
+    <div id="container">
+        <table>
+        <%
+            if(typ==1){
+                try{
+                    Connection con = ConnectionProvider.getCon();
+                    Statement st = con.createStatement();
+                    ResultSet rs = st.executeQuery("select o.id, p.nazwa, p.platforma, o.amount, o.price, o.delivery from orders o, products p where p.id=o.product_id and user_id="+session.getAttribute("id"));
+                    if(rs.next()==true)
                     {
-                        for(int i=1;i< (rs2.getInt(1)+1);i++)
-                        {
-                            %>
-                        <option value="<%=i%>"><%=i%></option><%
+                    %>
+                        <tr><td><%=rs.getInt(1)%></td><td></td><td><%=rs.getString(2)%></td><td></td><td><%=rs.getString(3)%></td><td></td><td><%=rs.getInt(4)%></td><td><%=rs.getInt(5)%></td><td><%=rs.getString(6)%></td></tr>
+                        <%
+                            while (rs.next())
+                            {
+                                %>
+                                <tr><td><%=rs.getInt(1)%></td><td></td><td><%=rs.getString(2)%></td><td></td><td><%=rs.getString(3)%></td><td></td><td><%=rs.getInt(4)%></td><td><%=rs.getInt(5)%></td><td><%=rs.getString(6)%></td></tr></tr>
+                                <%
+                            }
+                        %>
+                        <%--                    <form action="delallCartServlet" method="post">--%>
+                        <%--                        <input type="submit" value="Opróżnij koszyk">--%>
+                        <%--                    </form>--%>
+                        <%
                         }
+                        else
+                        {
+                        %>
+                            <p>Historia zamówień jest pusta</p>
+                        <%
+                        }
+                        rs.close();
+                        st.close();
+                        con.close();
+                    } catch(Exception e){
+                        e.printStackTrace();
                     }
-                %>
-                </select>
-                <input type="submit" value="Dodaj do koszyka">
-                </form>
-                <%
-                        rs2.close();
-                    }
-            if(typ==2)
-            {
-                %>
-            <a href="editproduct.jsp?prod=<%=rs.getString(1)%>"><button>Edytuj</button></a>
-            <%
             }
-            rs.close();
-            st.close();
-            con.close();
-        } catch (Exception e){
-            e.printStackTrace();
-        }
-    %>
+            else{
+                response.sendRedirect("index.jsp");
+                }
+        %>
+        </table>
+    </div>
 </body>
 </html>

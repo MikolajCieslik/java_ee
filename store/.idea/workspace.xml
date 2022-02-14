@@ -10,29 +10,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="605f93c9-849a-4999-9e1c-965fa7659cc1" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/store/AddToCartServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/store/DeleteAllFromCartServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/store/DeleteFromCartServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/cart.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/store/OrderServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/order.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/store/LogoutServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/store/LogoutServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/store/addProductServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/store/AddProductServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/store/editProductServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/store/EditProductServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/store/editUserServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/store/EditUserServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/addproduct.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/addproduct.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/editproduct.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/editproduct.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/store/AddToCartServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/store/AddToCartServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/cart.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/cart.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/index.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/product.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/product.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/store/LogoutServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/store/LogoutServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/store/addProductServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/store/addProductServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/store/editProductServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/store/editProductServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/store/editUserServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/store/editUserServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/store-1.0-SNAPSHOT/WEB-INF/classes/com/store/LogoutServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/store-1.0-SNAPSHOT/WEB-INF/classes/com/store/LogoutServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/store-1.0-SNAPSHOT/WEB-INF/classes/com/store/addProductServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/store-1.0-SNAPSHOT/WEB-INF/classes/com/store/addProductServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/store-1.0-SNAPSHOT/WEB-INF/classes/com/store/editProductServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/store-1.0-SNAPSHOT/WEB-INF/classes/com/store/editProductServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/store-1.0-SNAPSHOT/WEB-INF/classes/com/store/editUserServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/store-1.0-SNAPSHOT/WEB-INF/classes/com/store/editUserServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/store-1.0-SNAPSHOT/addproduct.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/store-1.0-SNAPSHOT/addproduct.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/store-1.0-SNAPSHOT/editproduct.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/store-1.0-SNAPSHOT/editproduct.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/store/AddToCartServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/store/AddToCartServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/store-1.0-SNAPSHOT/WEB-INF/classes/com/store/AddToCartServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/store-1.0-SNAPSHOT/WEB-INF/classes/com/store/AddToCartServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/store-1.0-SNAPSHOT/cart.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/store-1.0-SNAPSHOT/cart.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/store-1.0-SNAPSHOT/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/store-1.0-SNAPSHOT/index.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/store-1.0-SNAPSHOT/product.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/store-1.0-SNAPSHOT/product.jsp" afterDir="false" />
     </list>
@@ -44,8 +31,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Jsp File" />
         <option value="Class" />
+        <option value="Jsp File" />
       </list>
     </option>
   </component>
@@ -315,7 +302,8 @@
       <workItem from="1644608430109" duration="103000" />
       <workItem from="1644667579533" duration="1759000" />
       <workItem from="1644755700642" duration="7683000" />
-      <workItem from="1644844174671" duration="10047000" />
+      <workItem from="1644844174671" duration="18007000" />
+      <workItem from="1644864807557" duration="6525000" />
     </task>
     <servers />
   </component>
