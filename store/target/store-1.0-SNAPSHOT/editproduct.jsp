@@ -28,7 +28,7 @@
             Nazwa: <input type="text" name="nazwa" value='<%=rs.getString(2)%>' placeholder="Nazwa" required><br><br>
             Platforma: <input type="text" name="platforma" value='<%=rs.getString(3)%>' placeholder="Platforma" required><br><br>
             Kategoria: <input type="text" name="kategoria" value='<%=rs.getString(4)%>' placeholder="Kategoria" required><br><br>
-            Opis: <input type="textbox" name="opis" value='<%=rs.getString(5)%>' placeholder="Opis" required><br><br>
+            Opis: <input type="textarea" name="opis" value='<%=rs.getString(5)%>' placeholder="Opis" required><br><br>
             Zdjęcie: <input type="file" name="zdjecie" value=<%=rs.getString(6)%> placeholder="Zdjęcie" required><br><br>
             Ilość: <input type="number" name="ilosc" value=<%=rs.getString(7)%> placeholder="Ilość" required><br><br>
             Cena: <input type="number" step="0.01" value=<%=rs.getString(8)%> name="cena" placeholder="Cena" required><br><br>

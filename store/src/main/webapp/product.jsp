@@ -33,6 +33,28 @@
     <h1>Wybrany produkt nie istnieje</h1>
     <%
             }
+            if(typ==1)
+            {
+                ResultSet rs2 = st.executeQuery("select ilosc from products where id="+prod+";");
+                %>
+                <form action="addToCartServlet?prod=<%=prod%>" method="post">
+                    <select id="ilosc" name="ilosc">
+                    <%
+                    if(rs2.next()==true)
+                    {
+                        for(int i=1;i< (rs2.getInt(1)+1);i++)
+                        {
+                            %>
+                        <option value="<%=i%>"><%=i%></option><%
+                        }
+                    }
+                %>
+                </select>
+                <input type="submit" value="Dodaj do koszyka">
+                </form>
+                <%
+                        rs2.close();
+                    }
             if(typ==2)
             {
                 %>

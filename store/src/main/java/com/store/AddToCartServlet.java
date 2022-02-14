@@ -8,41 +8,39 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.sql.Connection;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-@WebServlet(name= "editProductServlet", urlPatterns = {"/editProServlet"})
-public class editProductServlet extends HttpServlet{
-
+@WebServlet(name= "addToCartServlet", urlPatterns = {"/addToCartServlet"})
+public class AddToCartServlet extends HttpServlet{
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         request.setCharacterEncoding("UTF-8");
         response.setCharacterEncoding("UTF-8");
-        String prod= request.getParameter("prod");
         HttpSession session = request.getSession();
         Integer typ_konta = (Integer) session.getAttribute("typ_konta");
-        if(typ_konta==2){
-            String nazwa = request.getParameter("nazwa");
-            String platforma = request.getParameter("platforma");
-            String kategoria = request.getParameter("kategoria");
-            String opis = request.getParameter("opis");
-            String zdjecie = request.getParameter("zdjecie");
-            Integer ilosc = Integer.parseInt(request.getParameter("ilosc"));
-            Double cena = Double.parseDouble(request.getParameter("cena"));
+        String prod= request.getParameter("prod");
+        if(typ_konta==1){
+            String id = session.getAttribute("id").toString();
+            Integer ilosc = Integer.valueOf(request.getParameter("ilosc"));
+            Double cena = 0.0;
             Connection con = ConnectionProvider.getCon();
             try {
                 Statement st = con.createStatement();
-                String sql = "Update products set nazwa='"+nazwa+"', platforma='"+platforma+"', kategoria='"+kategoria+"', opis='"+opis+"', zdjecie='zdjecia/"+zdjecie+
-                        "', ilosc='"+ilosc+"', cena='"+cena+"' where id="+prod+";";
+                ResultSet rs = st.executeQuery("select cena from products where id='"+prod+"'");
+                if(rs.next()==true) {
+
+                    cena= rs.getDouble(1);
+                }
+                String sql = "Insert into cart values('" + id + "','" + prod + "','" + ilosc + "','" + ilosc*cena +"');";
                 Integer insertedRows = st.executeUpdate(sql);
+                rs.close();
                 st.close();
                 con.close();
-                response.sendRedirect("editproduct.jsp?msg=valid");
-
+                response.sendRedirect("product.jsp?prod="+prod);
             } catch (SQLException e) {
                 e.printStackTrace();
-                response.sendRedirect("editproduct.jsp?msg=invalid");
-
             }
         }
         else{

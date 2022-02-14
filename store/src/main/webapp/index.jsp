@@ -12,9 +12,6 @@
 <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <a class="navbar-brand" href="index.jsp">Strona główna</a>
-
-
-
     <%
         Integer typ;
         if(session.isNew()){
@@ -33,16 +30,19 @@
                 <a class="navbar-brand" href="login.jsp">Logowanie</a>
             </li>
             </ul>
-
-
         <%
         }
         else{
             if(typ==1)
             {
                 %>
-                <a class="navbar-brand" href="edituser.jsp">Edytuj konto</a>
-                <a class="navbar-brand ml-auto" href="${pageContext.request.contextPath}/LogoServlet">Wyloguj</a>
+            <a class="navbar-brand" href="edituser.jsp">Edytuj konto</a>
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="navbar-brand" href="cart.jsp">Koszyk</a>
+                    <a class="navbar-brand" href="${pageContext.request.contextPath}/LogoServlet">Wyloguj</a>
+                </li>
+            </ul>
                 <%
             }
             if(typ==2)
@@ -64,7 +64,6 @@
             <%
             }
         }
-
     %>
     </nav>
     <div class="container">
@@ -73,7 +72,7 @@
             try{
                 Connection con = ConnectionProvider.getCon();
                 Statement st = con.createStatement();
-                ResultSet rs = st.executeQuery("select * from products");
+                ResultSet rs = st.executeQuery("select * from products where ilosc>0");
                 while (rs.next()){
         %>
                 <div class="card mb-3" style="min-width: 18rem; max-width: 18rem;">
@@ -84,14 +83,13 @@
                         <%
                             if(typ==2)
                             {
-                        %>
-                        <td><a href="editproduct.jsp?prod=<%=rs.getString(1)%>">Edytuj</a></td>
-                        <%
+                                %>
+                                <td><a href="editproduct.jsp?prod=<%=rs.getString(1)%>">Edytuj</a></td>
+                                <%
                             }
                         %>
                     </div>
                 </div>
-
     <%
             }
             rs.close();
@@ -100,7 +98,6 @@
         } catch(Exception e){
             e.printStackTrace();
         }
-
     %>
         </div>
     </div>

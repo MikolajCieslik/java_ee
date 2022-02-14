@@ -12,11 +12,6 @@
 <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <a class="navbar-brand" href="index.jsp">Strona główna</a>
-<%--        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">--%>
-<%--            <span class="navbar-toggler-icon"></span>--%>
-<%--        </button>--%>
-
-
     <%
         Integer typ;
         if(session.isNew()){
@@ -35,16 +30,19 @@
                 <a class="navbar-brand" href="login.jsp">Logowanie</a>
             </li>
             </ul>
-
-
         <%
         }
         else{
             if(typ==1)
             {
                 %>
-                <a class="navbar-brand" href="edituser.jsp">Edytuj konto</a>
-                <a class="navbar-brand ml-auto" href="${pageContext.request.contextPath}/LogoServlet">Wyloguj</a>
+            <a class="navbar-brand" href="edituser.jsp">Edytuj konto</a>
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="navbar-brand" href="cart.jsp">Koszyk</a>
+                    <a class="navbar-brand" href="${pageContext.request.contextPath}/LogoServlet">Wyloguj</a>
+                </li>
+            </ul>
                 <%
             }
             if(typ==2)
@@ -66,7 +64,6 @@
             <%
             }
         }
-
     %>
     </nav>
     <div class="container">
@@ -75,7 +72,7 @@
             try{
                 Connection con = ConnectionProvider.getCon();
                 Statement st = con.createStatement();
-                ResultSet rs = st.executeQuery("select * from products");
+                ResultSet rs = st.executeQuery("select * from products where ilosc>0");
                 while (rs.next()){
         %>
                 <div class="card mb-3" style="min-width: 18rem; max-width: 18rem;">
@@ -86,64 +83,13 @@
                         <%
                             if(typ==2)
                             {
-                        %>
-                        <td><a href="editproduct.jsp?prod=<%=rs.getString(1)%>">Edytuj</a></td>
-                        <%
+                                %>
+                                <td><a href="editproduct.jsp?prod=<%=rs.getString(1)%>">Edytuj</a></td>
+                                <%
                             }
                         %>
                     </div>
                 </div>
-
-<%--        <div class="card">--%>
-<%--            <div class="card-body">--%>
-<%--                <h5 class="card-title"><a href="product.jsp?prod=<%=rs.getString(1)%>"><%=rs.getString(2)%></a></h5>--%>
-<%--                <img class="card-img" src="<%=rs.getString(6)%>" alt="Card image cap">--%>
-<%--                <p class="card-text">Cena:<%=rs.getDouble(8)%></p>--%>
-<%--                <%--%>
-<%--                    if(typ==2)--%>
-<%--                    {--%>
-<%--                %>--%>
-<%--                <td><a href="editproduct.jsp?prod=<%=rs.getString(1)%>">Edytuj</a></td>--%>
-<%--                <%--%>
-<%--                    }--%>
-<%--                %>--%>
-<%--            </div>--%>
-<%--        </div>--%>
-<%--        <div class="card">--%>
-<%--            <img class="card-img-top" src="..." alt="Card image cap">--%>
-<%--            <div class="card-body">--%>
-<%--                <h5 class="card-title">Card title</h5>--%>
-<%--                <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>--%>
-<%--                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>--%>
-<%--            </div>--%>
-<%--        </div>--%>
-<%--        <div class="card">--%>
-<%--            <img class="card-img-top" src="..." alt="Card image cap">--%>
-<%--            <div class="card-body">--%>
-<%--                <h5 class="card-title">Card title</h5>--%>
-<%--                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>--%>
-<%--                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>--%>
-<%--            </div>--%>
-<%--        </div>--%>
-<%--    <table>--%>
-
-<%--                <tr>--%>
-<%--                    <td><a href="product.jsp?prod=<%=rs.getString(1)%>"><%=rs.getString(2)%></a></td>--%>
-<%--                    <td><%=rs.getString(3)%></td>--%>
-<%--                    <td><%=rs.getString(4)%></td>--%>
-<%--                    <td><a href="product.jsp?prod=<%=rs.getString(1)%>">--%>
-<%--                        <img src="<%=rs.getString(6)%>" width="100px"></a></td>--%>
-<%--                    <td><%=rs.getInt(7)%></td>--%>
-<%--                    <td><%=rs.getDouble(8)%></td>--%>
-<%--                    <%--%>
-<%--                        if(typ==2)--%>
-<%--                        {--%>
-<%--                            %>--%>
-<%--                            <td><a href="editproduct.jsp?prod=<%=rs.getString(1)%>">Edytuj</a></td>--%>
-<%--                    <%--%>
-<%--                        }--%>
-<%--                    %>--%>
-<%--                </tr>--%>
     <%
             }
             rs.close();
@@ -152,10 +98,8 @@
         } catch(Exception e){
             e.printStackTrace();
         }
-
     %>
         </div>
     </div>
-    <%--    </table>--%>
 </body>
 </html>

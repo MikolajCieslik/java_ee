@@ -11,38 +11,26 @@ import java.sql.Connection;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-@WebServlet(name= "addProductServlet", urlPatterns = {"/addServlet"})
-public class addProductServlet extends HttpServlet{
-
+@WebServlet(name= "deleteAllFromCartServlet", urlPatterns = {"/delallCartServlet"})
+public class DeleteAllFromCartServlet extends HttpServlet{
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         request.setCharacterEncoding("UTF-8");
         response.setCharacterEncoding("UTF-8");
         HttpSession session = request.getSession();
         Integer typ_konta = (Integer) session.getAttribute("typ_konta");
-        if(typ_konta==2){
-            String nazwa = request.getParameter("nazwa");
-            String platforma = request.getParameter("platforma");
-            String kategoria = request.getParameter("kategoria");
-            String opis = request.getParameter("opis");
-            String zdjecie = request.getParameter("zdjecie");
-            Integer ilosc = Integer.parseInt(request.getParameter("ilosc"));
-            Double cena = Double.parseDouble(request.getParameter("cena"));
+        if(typ_konta==1){
+            String id = session.getAttribute("id").toString();
             Connection con = ConnectionProvider.getCon();
             try {
                 Statement st = con.createStatement();
-                String sql = "Insert into products(nazwa, platforma, kategoria, opis, zdjecie, ilosc, cena) values('"
-                        + nazwa + "','" + platforma + "','" + kategoria + "','" + opis + "',' zdjecia/" + zdjecie + "','" + ilosc +
-                        "','" + cena + "');";
-                Integer insertedRows = st.executeUpdate(sql);
+                String sql = "Delete from cart where user_id = "+id+";";
+                Integer deletedRows = st.executeUpdate(sql);
                 st.close();
                 con.close();
-                response.sendRedirect("addproduct.jsp?msg=valid");
-
+                response.sendRedirect("cart.jsp");
             } catch (SQLException e) {
                 e.printStackTrace();
-                response.sendRedirect("addproduct.jsp?msg=invalid");
-
             }
         }
         else{

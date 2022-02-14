@@ -12,7 +12,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 
 @WebServlet(name= "editUserServlet", urlPatterns = {"/editUserServlet"})
-public class editUserServlet extends HttpServlet{
+public class EditUserServlet extends HttpServlet{
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

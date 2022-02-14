@@ -17,7 +17,7 @@
                     Nazwa: <input type="text" name="nazwa" placeholder="Nazwa" required><br><br>
                     Platforma: <input type="text" name="platforma" placeholder="Platforma" required><br><br>
                     Kategoria: <input type="text" name="kategoria" placeholder="Kategoria" required><br><br>
-                    Opis: <input type="textbox" name="opis" placeholder="Opis" required><br><br>
+                    Opis: <input type="textarea" name="opis" placeholder="Opis" required><br><br>
                     Zdjęcie: <input type="file" name="zdjecie" placeholder="Zdjęcie" required><br><br>
                     Ilość: <input type="number" name="ilosc" placeholder="Ilość" required><br><br>
                     Cena: <input type="number" step="0.01" name="cena" placeholder="Cena" required><br><br>
