@@ -14,12 +14,28 @@
             ResultSet rs = st.executeQuery("select * from products where id="+prod+";");
             if(rs.next()==true){
     %>
-    <title><%=rs.getString(2)%></title>
+    <title>'<%=rs.getString(2)%>'</title>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
 <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="index.jsp">Strona główna</a>
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+                <a class="navbar-brand" href="index.jsp">Strona główna</a>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Platforma
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <li><a class="dropdown-item" href="platform_list.jsp?platform='Playstation 4'">Playstation 4</a></li>
+                    <li><a class="dropdown-item" href="platform_list.jsp?platform='Playstation 5'">Playstation 5</a></li>
+                    <li><a class="dropdown-item" href="platform_list.jsp?platform='PC'">PC</a></li>
+                    <li><a class="dropdown-item" href="platform_list.jsp?platform='Xbox one'">Xbox one</a></li>
+                </ul>
+            </li>
+        </ul>
         <%
             if(session.isNew()){
                 typ = 0;

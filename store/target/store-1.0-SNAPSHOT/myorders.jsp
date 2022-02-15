@@ -7,11 +7,28 @@
 <html>
 <head>
     <title>Moje zamówienia</title>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
 <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="index.jsp">Strona główna</a>
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+                <a class="navbar-brand" href="index.jsp">Strona główna</a>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Platforma
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <li><a class="dropdown-item" href="platform_list.jsp?platform='Playstation 4'">Playstation 4</a></li>
+                    <li><a class="dropdown-item" href="platform_list.jsp?platform='Playstation 5'">Playstation 5</a></li>
+                    <li><a class="dropdown-item" href="platform_list.jsp?platform='PC'">PC</a></li>
+                    <li><a class="dropdown-item" href="platform_list.jsp?platform='Xbox one'">Xbox one</a></li>
+                </ul>
+            </li>
+        </ul>
+
         <%
             Integer typ;
             if(session.isNew()){
@@ -73,33 +90,51 @@
                 try{
                     Connection con = ConnectionProvider.getCon();
                     Statement st = con.createStatement();
-                    ResultSet rs = st.executeQuery("select o.id, p.nazwa, p.platforma, o.amount, o.price, o.delivery from orders o, products p where p.id=o.product_id and user_id="+session.getAttribute("id"));
+                    ResultSet rs = st.executeQuery("select o.id, o.price, o.delivery from orders o where o.user_id="+session.getAttribute("id")+" group by o.id");
+                    double del=0;
                     if(rs.next()==true)
                     {
-                    %>
-                        <tr><td><%=rs.getInt(1)%></td><td></td><td><%=rs.getString(2)%></td><td></td><td><%=rs.getString(3)%></td><td></td><td><%=rs.getInt(4)%></td><td><%=rs.getInt(5)%></td><td><%=rs.getString(6)%></td></tr>
-                        <%
-                            while (rs.next())
-                            {
-                                %>
-                                <tr><td><%=rs.getInt(1)%></td><td></td><td><%=rs.getString(2)%></td><td></td><td><%=rs.getString(3)%></td><td></td><td><%=rs.getInt(4)%></td><td><%=rs.getInt(5)%></td><td><%=rs.getString(6)%></td></tr></tr>
-                                <%
-                            }
-                        %>
-                        <%--                    <form action="delallCartServlet" method="post">--%>
-                        <%--                        <input type="submit" value="Opróżnij koszyk">--%>
-                        <%--                    </form>--%>
-                        <%
+                        Statement st2 = con.createStatement();
+                        ResultSet rs2 = st2.executeQuery("select sum(price) from orders where id="+rs.getInt(1)+";");
+                        if(rs.getString(3).equals("Poczta")){
+                            del=12;
                         }
                         else
                         {
+                            del=20;
+                        }
+                        rs2.next();
+                    %>
+                    <tr><td><a href="order.jsp?id=<%=rs.getInt(1)%>"><%=rs.getInt(1)%></a></td><td></td><td><%=rs.getString(3)%></td><td></td><td><%=rs2.getDouble(1)+del%></td></tr>
+                    <%
+                        rs2.close();
+                        while (rs.next())
+                        {
+                            if(rs.getString(3).equals("Poczta")){
+                                del=12;
+                            }
+                            else
+                            {
+                                del=20;
+                            }
+                            rs2 = st2.executeQuery("select sum(price) from orders where id="+rs.getInt(1)+";");
+                            rs2.next();
+                            %>
+                            <tr><td><a href="order.jsp?id=<%=rs.getInt(1)%>"><%=rs.getInt(1)%></a></td><td></td><td><%=rs.getString(3)%></td><td></td><td><%=rs2.getDouble(1)+del%></td></tr>
+                            <%
+                            rs2.close();
+                            }
+                        st2.close();
+                    }
+                    else
+                    {
                         %>
                             <p>Historia zamówień jest pusta</p>
                         <%
-                        }
-                        rs.close();
-                        st.close();
-                        con.close();
+                    }
+                    rs.close();
+                    st.close();
+                    con.close();
                     } catch(Exception e){
                         e.printStackTrace();
                     }

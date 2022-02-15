@@ -57,6 +57,14 @@
     %>
 </nav>
 <div class="container">
+    <%
+        String msg= request.getParameter("error");
+        if("error".equals(msg)){
+    %>
+    <h3>Wystąpił błąd podczas składania zamówienia.</h3>
+    <a href="index.jsp"><button>Strona główna</button></a>
+    <%}
+    %>
     <table>
 
     <%

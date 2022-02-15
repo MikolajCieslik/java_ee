@@ -10,17 +10,25 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="605f93c9-849a-4999-9e1c-965fa7659cc1" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/store/OrderServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/order.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/platform_list.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/store/AddToCartServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/store/AddToCartServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/store/OrderServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/store/OrderServlet.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/cart.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/cart.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/index.css" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/index.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/myorders.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/myorders.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/order.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/order.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/product.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/product.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/store/AddToCartServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/store/AddToCartServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/store/OrderServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/store/OrderServlet.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/store-1.0-SNAPSHOT/WEB-INF/classes/com/store/AddToCartServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/store-1.0-SNAPSHOT/WEB-INF/classes/com/store/AddToCartServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/store-1.0-SNAPSHOT/WEB-INF/classes/com/store/OrderServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/store-1.0-SNAPSHOT/WEB-INF/classes/com/store/OrderServlet.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/store-1.0-SNAPSHOT/cart.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/store-1.0-SNAPSHOT/cart.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/store-1.0-SNAPSHOT/index.css" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/store-1.0-SNAPSHOT/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/store-1.0-SNAPSHOT/index.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/store-1.0-SNAPSHOT/myorders.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/store-1.0-SNAPSHOT/myorders.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/store-1.0-SNAPSHOT/order.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/store-1.0-SNAPSHOT/order.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/store-1.0-SNAPSHOT/product.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/store-1.0-SNAPSHOT/product.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -304,6 +312,8 @@
       <workItem from="1644755700642" duration="7683000" />
       <workItem from="1644844174671" duration="18007000" />
       <workItem from="1644864807557" duration="6525000" />
+      <workItem from="1644881437413" duration="46000" />
+      <workItem from="1644928280918" duration="23195000" />
     </task>
     <servers />
   </component>

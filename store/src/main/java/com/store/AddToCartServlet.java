@@ -28,15 +28,28 @@ public class AddToCartServlet extends HttpServlet{
             Connection con = ConnectionProvider.getCon();
             try {
                 Statement st = con.createStatement();
+                Statement st2 = con.createStatement();
+                Statement st3 = con.createStatement();
+                Statement st4 = con.createStatement();
                 ResultSet rs = st.executeQuery("select cena from products where id='"+prod+"'");
-                //TODO: sprawdzić czy jest już produkt w koszyku
                 if(rs.next()==true) {
 
                     cena= rs.getDouble(1);
                 }
-                String sql = "Insert into cart values('" + id + "','" + prod + "','" + ilosc + "','" + ilosc*cena +"');";
-                Integer insertedRows = st.executeUpdate(sql);
+                ResultSet rs2 = st2.executeQuery("select * from cart where product_id= "+prod+" and user_id= "+id+";");
+                if(rs2.next()==true)
+                {
+                    Integer updatedRows= st4.executeUpdate("update cart set amount= "+ilosc+", price= "+ilosc*cena+" where product_id="+prod+" and user_id="+id+";");
+                }
+                else{
+                    String sql = "Insert into cart values('" + id + "','" + prod + "','" + ilosc + "','" + ilosc*cena +"');";
+                    Integer insertedRows = st3.executeUpdate(sql);
+                }
+                st2.close();
+                st3.close();
+                st4.close();
                 rs.close();
+                rs2.close();
                 st.close();
                 con.close();
                 response.sendRedirect("product.jsp?prod="+prod);
