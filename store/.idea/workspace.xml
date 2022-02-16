@@ -11,10 +11,6 @@
   <component name="ChangeListManager">
     <list default="true" id="605f93c9-849a-4999-9e1c-965fa7659cc1" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/store/AddProductServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/store/AddProductServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/store/LoginServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/store/LoginServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/store/OrderServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/store/OrderServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/store/RegisterServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/store/RegisterServlet.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/addproduct.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/addproduct.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/cart.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/cart.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/editproduct.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/editproduct.jsp" afterDir="false" />
@@ -312,7 +308,7 @@
       <workItem from="1644864807557" duration="6525000" />
       <workItem from="1644881437413" duration="46000" />
       <workItem from="1644928280918" duration="24697000" />
-      <workItem from="1645011405402" duration="14296000" />
+      <workItem from="1645011405402" duration="15123000" />
     </task>
     <servers />
   </component>
