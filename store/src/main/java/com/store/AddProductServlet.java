@@ -29,7 +29,6 @@ public class AddProductServlet extends HttpServlet{
             Integer ilosc = Integer.parseInt(request.getParameter("ilosc"));
             Double cena = Double.parseDouble(request.getParameter("cena"));
             Connection con = ConnectionProvider.getCon();
-            //TODO: naprawić wstawianie zdjęć żeby nie trzeba było resetować serwera
             try {
                 Statement st = con.createStatement();
                 String sql = "Insert into products(nazwa, platforma, kategoria, opis, zdjecie, ilosc, cena) values('"

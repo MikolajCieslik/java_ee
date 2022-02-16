@@ -20,8 +20,6 @@ public class RegisterServlet extends HttpServlet {
         response.setCharacterEncoding("UTF-8");
         String login = request.getParameter("login");
         String haslo = request.getParameter("haslo");
-        //TODO: dorobić hashowanie haseł
-        //String haslohash = hashCode()
         Integer typ_konta = 1;
         String imie = request.getParameter("imie");
         String nazwisko = request.getParameter("nazwisko");

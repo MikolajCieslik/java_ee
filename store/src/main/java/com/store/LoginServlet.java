@@ -18,7 +18,6 @@ public class LoginServlet extends HttpServlet{
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        //TODO: dorobić hashowanie haseł
         String login = request.getParameter("login");
         String haslo = request.getParameter("haslo");
         try{
@@ -41,8 +40,7 @@ public class LoginServlet extends HttpServlet{
                 imie_nazwisko = rs.getString(2)+" "+ rs.getString(3);
                 session.setAttribute("imie_nazwisko",imie_nazwisko);
                 session.setAttribute("typ_konta",typ_konta);
-                //
-                response.sendRedirect("login.jsp?msg=valid");
+                response.sendRedirect("index.jsp");
             }
             else{
                 response.sendRedirect("login.jsp?msg=invalid");

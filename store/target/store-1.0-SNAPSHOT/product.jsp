@@ -14,7 +14,7 @@
             ResultSet rs = st.executeQuery("select * from products where id="+prod+";");
             if(rs.next()==true){
     %>
-    <title>'<%=rs.getString(2)%>'</title>
+    <title><%=rs.getString(2)%></title>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
@@ -25,14 +25,14 @@
                 <a class="navbar-brand" href="index.jsp">Strona główna</a>
             </li>
             <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <a class="navbar-brand dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                     Platforma
                 </a>
                 <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <li><a class="dropdown-item" href="platform_list.jsp?platform='Playstation 4'">Playstation 4</a></li>
-                    <li><a class="dropdown-item" href="platform_list.jsp?platform='Playstation 5'">Playstation 5</a></li>
-                    <li><a class="dropdown-item" href="platform_list.jsp?platform='PC'">PC</a></li>
-                    <li><a class="dropdown-item" href="platform_list.jsp?platform='Xbox one'">Xbox one</a></li>
+                    <li><a class="dropdown-item" href="platform_list.jsp?platform=Playstation 4">Playstation 4</a></li>
+                    <li><a class="dropdown-item" href="platform_list.jsp?platform=Playstation 5">Playstation 5</a></li>
+                    <li><a class="dropdown-item" href="platform_list.jsp?platform=PC">PC</a></li>
+                    <li><a class="dropdown-item" href="platform_list.jsp?platform=Xbox one">Xbox one</a></li>
                 </ul>
             </li>
         </ul>
@@ -89,14 +89,23 @@
                 }
             }
         %>
-    </nav>
-    <h2><%=rs.getString(2)%></h2><br>
-    <img src=<%=rs.getString(6)%>><br>
-    Platforma: <%=rs.getString(3)%><br>
-    <%=rs.getString(4)%><br>
-    <%=rs.getString(5)%><br>
-    Ilość: <%=rs.getInt(7)%><br>
-    Cena: <%=rs.getDouble(8)%><br>
+    </nav><br><br>
+    <div class="container">
+    <div class="row justify-content-center">
+        <div class="col-5">
+    <h3><%=rs.getString(2)%></h3><br>
+        </div>
+        </div>
+        <div class="row justify-content-center">
+        <div class="col-5">
+        <img src="<%=rs.getString(6)%>" style="height: 85%; width: 85%"><br>
+        </div>
+        <div class="col-5">
+            Platforma: <%=rs.getString(3)%><br>
+            <%=rs.getString(4)%><br>
+            <%=rs.getString(5)%><br><br>
+            Ilość: <%=rs.getInt(7)%><br>
+            Cena: <%=rs.getDouble(8)%><br>
     <%
             }
             else
@@ -109,6 +118,7 @@
             {
                 ResultSet rs2 = st.executeQuery("select ilosc from products where id="+prod+";");
                 %>
+            <br>
                 <form action="addToCartServlet?prod=<%=prod%>" method="post">
                     <select id="ilosc" name="ilosc">
                     <%
@@ -120,8 +130,8 @@
                         <option value="<%=i%>"><%=i%></option><%
                         }
                     }
-                %>
-                </select>
+                    %>
+                </select><br><br>
                 <input type="submit" value="Dodaj do koszyka">
                 </form>
                 <%
@@ -130,7 +140,12 @@
             if(typ==2)
             {
                 %>
+            <br>
             <a href="editproduct.jsp?prod=<%=rs.getString(1)%>"><button>Edytuj</button></a>
+        </div>
+            <div class="col-5">
+            </div>
+        </div>
             <%
             }
             rs.close();
@@ -140,5 +155,6 @@
             e.printStackTrace();
         }
     %>
+    </div>
 </body>
 </html>

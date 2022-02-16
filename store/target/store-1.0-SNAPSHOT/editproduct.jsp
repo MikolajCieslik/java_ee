@@ -6,8 +6,83 @@
 <html>
 <head>
     <title>Edytuj produkt</title>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
 <body>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+            <a class="navbar-brand" href="index.jsp">Strona główna</a>
+        </li>
+        <li class="nav-item dropdown">
+            <a class="navbar-brand dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Platforma
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <li><a class="dropdown-item" href="platform_list.jsp?platform=Playstation 4">Playstation 4</a></li>
+                <li><a class="dropdown-item" href="platform_list.jsp?platform=Playstation 5">Playstation 5</a></li>
+                <li><a class="dropdown-item" href="platform_list.jsp?platform=PC">PC</a></li>
+                <li><a class="dropdown-item" href="platform_list.jsp?platform=Xbox one">Xbox one</a></li>
+            </ul>
+        </li>
+    </ul>
+    <%
+        Integer typ;
+        if(session.isNew()){
+            typ = 0;
+            session.setAttribute("typ_konta",0);
+        }
+        else{
+            typ = (Integer) session.getAttribute("typ_konta");
+        }
+        if(typ == null)
+        {
+    %>
+    <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+            <a class="navbar-brand" href="register.jsp">Rejestracja</a>
+            <a class="navbar-brand" href="login.jsp">Logowanie</a>
+        </li>
+    </ul>
+    <%
+    }
+    else{
+        if(typ==1)
+        {
+    %>
+
+    <a class="navbar-brand" href="edituser.jsp">Edytuj konto</a>
+    <a class="navbar-brand" href="myorders.jsp">Moje zamówienia</a>
+    <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+            <a class="navbar-brand" href="cart.jsp">Koszyk</a>
+            <a class="navbar-brand" href="${pageContext.request.contextPath}/LogoServlet">Wyloguj</a>
+        </li>
+    </ul>
+    <%
+        }
+        if(typ==2)
+        {
+    %>
+    <a class="navbar-brand" href="addproduct.jsp">Dodaj produkt</a>
+    <a class="navbar-brand ml-auto" href="${pageContext.request.contextPath}/LogoServlet">Wyloguj</a>
+    <%
+        }
+        if(typ==0)
+        {
+    %>
+    <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+            <a class="navbar-brand" href="register.jsp">Rejestracja</a>
+            <a class="navbar-brand" href="login.jsp">Logowanie</a>
+        </li>
+    </ul>
+    <%
+            }
+        }
+    %>
+</nav><br><br>
     <%
         String prod= request.getParameter("prod");
         Integer typ_konta = (Integer) session.getAttribute("typ_konta");
@@ -23,8 +98,11 @@
                 if(rs.next()==true){
 
     %>
-    <div id="container">
-        <form action="editProServlet?prod=<%=prod%>" method="post">
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-5">
+            <h3>Edytuj produkt</h3><br>
+            <form action="editProServlet?prod=<%=prod%>" method="post">
             Nazwa: <input type="text" name="nazwa" value='<%=rs.getString(2)%>' placeholder="Nazwa" required><br><br>
             Platforma: <input type="text" name="platforma" value='<%=rs.getString(3)%>' placeholder="Platforma" required><br><br>
             Kategoria: <input type="text" name="kategoria" value='<%=rs.getString(4)%>' placeholder="Kategoria" required><br><br>
@@ -35,6 +113,7 @@
             <input type="submit" value="Edytuj">
         </form>
         <a href="index.jsp"><button value="Anuluj">Anuluj</button></a>
+    </div>
     </div>
     <%
         }

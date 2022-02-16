@@ -66,7 +66,6 @@ public class OrderServlet extends HttpServlet{
                         Integer updatedRows = st5.executeUpdate(sql2);
                     }
                     else{
-                        //TODO: Zrobić stronę z błędem zamówienia
                         response.sendRedirect("cart.jsp?error=error");
                     }
                     rs3.close();

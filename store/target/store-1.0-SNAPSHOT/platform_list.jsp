@@ -6,7 +6,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Strona główna sklepu</title>
+        <%
+            String msg= request.getParameter("platform");
+            %>
+    <title>Gry na <%=msg%></title>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
@@ -17,14 +20,14 @@
             <a class="navbar-brand" href="index.jsp">Strona główna</a>
         </li>
         <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <a class="navbar-brand dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                 Platforma
             </a>
             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <li><a class="dropdown-item" href="platform_list.jsp?platform='Playstation 4'">Playstation 4</a></li>
-                <li><a class="dropdown-item" href="platform_list.jsp?platform='Playstation 5'">Playstation 5</a></li>
-                <li><a class="dropdown-item" href="platform_list.jsp?platform='PC'">PC</a></li>
-                <li><a class="dropdown-item" href="platform_list.jsp?platform='Xbox one'">Xbox one</a></li>
+                <li><a class="dropdown-item" href="platform_list.jsp?platform=Playstation 4">Playstation 4</a></li>
+                <li><a class="dropdown-item" href="platform_list.jsp?platform=Playstation 5">Playstation 5</a></li>
+                <li><a class="dropdown-item" href="platform_list.jsp?platform=PC">PC</a></li>
+                <li><a class="dropdown-item" href="platform_list.jsp?platform=Xbox one">Xbox one</a></li>
             </ul>
         </li>
     </ul>
@@ -83,22 +86,22 @@
             }
         }
     %>
-</nav>
+</nav><br><br>
 <div class="container">
+    <h3>Gry na <%=msg%></h3><br>
     <div class="card-deck">
         <%
-            String msg= request.getParameter("platform");
             try{
                 Connection con = ConnectionProvider.getCon();
                 Statement st = con.createStatement();
-                ResultSet rs = st.executeQuery("select * from products where platforma="+msg+";");
+                ResultSet rs = st.executeQuery("select * from products where platforma='"+msg+"';");
                 while (rs.next()){
         %>
         <div class="card mb-3" style="min-width: 18rem; max-width: 18rem;">
-            <img class="card-img-top" src="<%=rs.getString(6)%>" alt="Card image cap">
+            <a href="product.jsp?prod=<%=rs.getString(1)%>"><img class="card-img-top" src="<%=rs.getString(6)%>" alt="Card image cap"></a>
             <div class="card-body">
                 <h5 class="card-title"><a href="product.jsp?prod=<%=rs.getString(1)%>"><%=rs.getString(2)%></a></h5>
-                <p class="card-text">Cena:<%=rs.getDouble(8)%></p>
+                <p class="card-text">Cena: <%=rs.getDouble(8)%></p>
                 <%
                     if(typ==2)
                     {

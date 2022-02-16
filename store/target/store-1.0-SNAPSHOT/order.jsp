@@ -75,19 +75,22 @@
         }
     %>
 </nav>
+<br><br>
 <div class="container">
-    <h3>Zamówienie numer <%=rs.getInt(1)%></h3><br>
-    <p>Adres i rodzaj dostawy:</p><br>
-    <p><%=rs.getString(6)%></p><br>
-    <p><%=rs.getString(7)+" "+rs.getString(8)%></p><br>
-    <p><%=rs.getString(9)%></p><br>
-    <p><%=rs.getString(10)%></p><br>
-    <p><%=rs.getString(11)%></p><br>
-    <p><%=rs.getString(12)%></p><br>
-    <h3>Zamówione produkty:</h3><br>
+<div class="row justify-content-center">
+    <div class="col-5">
+    <h3>Zamówienie numer <%=rs.getInt(1)%></h3>
+    <p>Adres i rodzaj dostawy:</p>
+    <p>Rodzaj dostawy: <%=rs.getString(6)%></p>
+    <p>Klient: <%=rs.getString(7)+" "+rs.getString(8)%></p>
+    <p>Kod pocztowy: <%=rs.getString(9)%></p>
+    <p>Miasto: <%=rs.getString(10)%></p>
+    <p>Ulica: <%=rs.getString(11)%></p>
+    <p> Nummer telefonu: <%=rs.getString(12)%></p>
+    <h3>Zamówione produkty:</h3>
     <table>
-        <tr><th>Nazwa produktu</th><th>Platforma</th><th>Ilość</th><th>Cena</th></tr>
-        <tr><td><a href="product.jsp?prod=<%=rs.getInt(3)%>"><%=rs.getString(13)%></a></td><td><%=rs.getString(14)%></td><td><%=rs.getInt(4)%></td><td><%=rs.getDouble(5)%></td></tr>
+        <tr><th>Nazwa produktu</th><th></th><th>Platforma</th><th></th><th>Ilość</th><th></th><th>Cena</th></tr>
+        <tr><td><a href="product.jsp?prod=<%=rs.getInt(3)%>"><%=rs.getString(13)%></a></td><td></td><td><%=rs.getString(14)%></td><td></td><td><%=rs.getInt(4)%></td><td></td><td><%=rs.getDouble(5)%></td></tr>
         <%
             double price= rs.getDouble(5);
             if(rs.getString(6).equals("Poczta"))
@@ -101,13 +104,13 @@
             while(rs.next())
             {
                 %>
-        <tr><td><a href="product.jsp?prod=<%=rs.getInt(3)%>"><%=rs.getString(13)%></a></td><td><%=rs.getString(14)%></td><td><%=rs.getInt(4)%></td><td><%=rs.getDouble(5)%></td></tr>
+        <tr><td><a href="product.jsp?prod=<%=rs.getInt(3)%>"><%=rs.getString(13)%></a></td><td></td><td><%=rs.getString(14)%></td><td></td><td><%=rs.getInt(4)%></td><td></td><td><%=rs.getDouble(5)%></td></tr>
                 <%
                 price+=rs.getDouble(5);
             }
             %>
-        </table>
-        <p>Wartość zamówienia: <%=price%></p>
+        </table><br>
+        <p>Wartość zamówienia z wysyłką: <%=price%></p>
     <%
         }
         %>
@@ -120,6 +123,8 @@
         e.printStackTrace();
         }
     %>
+</div>
+</div>
 </div>
 </body>
 </html>

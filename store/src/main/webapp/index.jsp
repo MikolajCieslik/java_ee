@@ -17,14 +17,14 @@
             <a class="navbar-brand" href="index.jsp">Strona główna</a>
             </li>
         <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <a class="navbar-brand dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                 Platforma
             </a>
             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <li><a class="dropdown-item" href="platform_list.jsp?platform='Playstation 4'">Playstation 4</a></li>
-                <li><a class="dropdown-item" href="platform_list.jsp?platform='Playstation 5'">Playstation 5</a></li>
-                <li><a class="dropdown-item" href="platform_list.jsp?platform='PC'">PC</a></li>
-                <li><a class="dropdown-item" href="platform_list.jsp?platform='Xbox one'">Xbox one</a></li>
+                <li><a class="dropdown-item" href="platform_list.jsp?platform=Playstation 4">Playstation 4</a></li>
+                <li><a class="dropdown-item" href="platform_list.jsp?platform=Playstation 5">Playstation 5</a></li>
+                <li><a class="dropdown-item" href="platform_list.jsp?platform=PC">PC</a></li>
+                <li><a class="dropdown-item" href="platform_list.jsp?platform=Xbox one">Xbox one</a></li>
             </ul>
         </li>
         </ul>
@@ -83,7 +83,7 @@
             }
         }
     %>
-    </nav>
+    </nav><br><br>
     <div class="container">
         <div class="card-deck">
         <%
@@ -94,10 +94,10 @@
                 while (rs.next()){
         %>
                 <div class="card mb-3" style="min-width: 18rem; max-width: 18rem;">
-                    <img class="card-img-top" src="<%=rs.getString(6)%>" alt="Card image cap">
+                    <a href="product.jsp?prod=<%=rs.getString(1)%>"><img class="card-img-top" src="<%=rs.getString(6)%>" alt="Card image cap"></a>
                     <div class="card-body">
                         <h5 class="card-title"><a href="product.jsp?prod=<%=rs.getString(1)%>"><%=rs.getString(2)%></a></h5>
-                        <p class="card-text">Cena:<%=rs.getDouble(8)%></p>
+                        <p class="card-text">Cena: <%=rs.getDouble(8)%></p>
                         <%
                             if(typ==2)
                             {
