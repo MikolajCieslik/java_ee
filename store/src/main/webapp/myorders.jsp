@@ -25,6 +25,8 @@
                     <li><a class="dropdown-item" href="platform_list.jsp?platform=Playstation 5">Playstation 5</a></li>
                     <li><a class="dropdown-item" href="platform_list.jsp?platform=PC">PC</a></li>
                     <li><a class="dropdown-item" href="platform_list.jsp?platform=Xbox one">Xbox one</a></li>
+                    <li><a class="dropdown-item" href="platform_list.jsp?platform=Nintendo Switch">Nintendo Switch</a></li>
+                    <li><a class="dropdown-item" href="platform_list.jsp?platform=Xbox Series X/S">Xbox Series X/S</a></li>
                 </ul>
             </li>
         </ul>

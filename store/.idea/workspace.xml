@@ -22,7 +22,17 @@
       <change beforePath="$PROJECT_DIR$/src/main/webapp/platform_list.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/platform_list.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/product.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/product.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/register.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/register.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/store-1.0-SNAPSHOT/addproduct.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/store-1.0-SNAPSHOT/addproduct.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/store-1.0-SNAPSHOT/cart.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/store-1.0-SNAPSHOT/cart.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/store-1.0-SNAPSHOT/editproduct.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/store-1.0-SNAPSHOT/editproduct.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/store-1.0-SNAPSHOT/edituser.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/store-1.0-SNAPSHOT/edituser.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/store-1.0-SNAPSHOT/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/store-1.0-SNAPSHOT/index.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/store-1.0-SNAPSHOT/login.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/store-1.0-SNAPSHOT/login.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/store-1.0-SNAPSHOT/myorders.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/store-1.0-SNAPSHOT/myorders.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/store-1.0-SNAPSHOT/order.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/store-1.0-SNAPSHOT/order.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/store-1.0-SNAPSHOT/platform_list.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/store-1.0-SNAPSHOT/platform_list.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/store-1.0-SNAPSHOT/product.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/store-1.0-SNAPSHOT/product.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/store-1.0-SNAPSHOT/register.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/store-1.0-SNAPSHOT/register.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -308,7 +318,8 @@
       <workItem from="1644864807557" duration="6525000" />
       <workItem from="1644881437413" duration="46000" />
       <workItem from="1644928280918" duration="24697000" />
-      <workItem from="1645011405402" duration="15123000" />
+      <workItem from="1645011405402" duration="18823000" />
+      <workItem from="1645093746935" duration="1222000" />
     </task>
     <servers />
   </component>

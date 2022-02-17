@@ -33,6 +33,8 @@
                     <li><a class="dropdown-item" href="platform_list.jsp?platform=Playstation 5">Playstation 5</a></li>
                     <li><a class="dropdown-item" href="platform_list.jsp?platform=PC">PC</a></li>
                     <li><a class="dropdown-item" href="platform_list.jsp?platform=Xbox one">Xbox one</a></li>
+                    <li><a class="dropdown-item" href="platform_list.jsp?platform=Nintendo Switch">Nintendo Switch</a></li>
+                    <li><a class="dropdown-item" href="platform_list.jsp?platform=Xbox Series X/S">Xbox Series X/S</a></li>
                 </ul>
             </li>
         </ul>
@@ -117,24 +119,32 @@
             if(typ==1)
             {
                 ResultSet rs2 = st.executeQuery("select ilosc from products where id="+prod+";");
+                if(rs2.next()==true)
+                {
+                    if(rs2.getInt(1)==0)
+                    {
+                        %>
+                        <h5>Brak produktu w magazynie</h5>
+                        <%
+                    }
+                    else{
                 %>
             <br>
                 <form action="addToCartServlet?prod=<%=prod%>" method="post">
                     <select id="ilosc" name="ilosc">
                     <%
-                    if(rs2.next()==true)
-                    {
-                        for(int i=1;i< (rs2.getInt(1)+1);i++)
-                        {
-                            %>
-                        <option value="<%=i%>"><%=i%></option><%
-                        }
-                    }
+                            for(int i=1;i< (rs2.getInt(1)+1);i++)
+                            {
+                                %>
+                            <option value="<%=i%>"><%=i%></option><%
+                            }
                     %>
                 </select><br><br>
                 <input type="submit" value="Dodaj do koszyka">
                 </form>
                 <%
+                            }
+                        }
                         rs2.close();
                     }
             if(typ==2)

@@ -20,7 +20,24 @@
 </head>
 <body>
 <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-    <a class="navbar-brand" href="index.jsp">Strona główna</a>
+    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+            <a class="navbar-brand" href="index.jsp">Strona główna</a>
+        </li>
+        <li class="nav-item dropdown">
+            <a class="navbar-brand dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Platforma
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <li><a class="dropdown-item" href="platform_list.jsp?platform=Playstation 4">Playstation 4</a></li>
+                <li><a class="dropdown-item" href="platform_list.jsp?platform=Playstation 5">Playstation 5</a></li>
+                <li><a class="dropdown-item" href="platform_list.jsp?platform=PC">PC</a></li>
+                <li><a class="dropdown-item" href="platform_list.jsp?platform=Xbox one">Xbox one</a></li>
+                <li><a class="dropdown-item" href="platform_list.jsp?platform=Nintendo Switch">Nintendo Switch</a></li>
+                <li><a class="dropdown-item" href="platform_list.jsp?platform=Xbox Series X/S">Xbox Series X/S</a></li>
+            </ul>
+        </li>
+    </ul>
     <%
         if(session.isNew()){
             typ = 0;
@@ -35,7 +52,6 @@
     <ul class="navbar-nav ml-auto">
         <li class="nav-item">
             <a class="navbar-brand" href="register.jsp">Rejestracja</a>
-            <a class="navbar-brand" href="login.jsp">Logowanie</a>
         </li>
     </ul>
     <%
@@ -44,6 +60,7 @@
         if(typ==1)
         {
     %>
+
     <a class="navbar-brand" href="edituser.jsp">Edytuj konto</a>
     <a class="navbar-brand" href="myorders.jsp">Moje zamówienia</a>
     <ul class="navbar-nav ml-auto">
@@ -67,15 +84,13 @@
     <ul class="navbar-nav ml-auto">
         <li class="nav-item">
             <a class="navbar-brand" href="register.jsp">Rejestracja</a>
-            <a class="navbar-brand" href="login.jsp">Logowanie</a>
         </li>
     </ul>
     <%
             }
         }
     %>
-</nav>
-<br><br>
+</nav><br><br>
 <div class="container">
 <div class="row justify-content-center">
     <div class="col-5">
